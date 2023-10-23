@@ -11,7 +11,7 @@ def index():
 def add_movie():
     movie_data = request.get_json()
     movies.append(movie_data)
-    return json.dumps({"message": "La película fue agregada con éxito"})
+    return "message: La película fue agregada con éxito"
 
 @app.route("/api/all-movies-by-genre/<genre>", methods=["GET"])
 def get_movies_by_genre(genre):
@@ -30,7 +30,7 @@ def update_movie():
             break
 
     
-    return json.dumps({"message": "La película fue actualizada con éxito"})
+    return "message: La película fue actualizada con éxito"
 
 if __name__ == "__main__":
     app.run(debug=True)
